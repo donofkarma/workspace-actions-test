@@ -30,7 +30,7 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Publish packages with the new version ($GITHUB_REF_NAME)
+      - name: Publish packages
         run: yarn release ${GITHUB_REF_NAME}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
