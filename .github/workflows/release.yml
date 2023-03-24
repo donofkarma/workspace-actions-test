@@ -13,10 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        workspaces: ['packages/hello-world', packages/say-my-name]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,11 +30,7 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Create version and publish
-        uses: ./
-        with:
-          working-directory: ${{ matrix.workspaces }}
-          build: yarn version ${GITHUB_REF_NAME} --no-git-tag-version
-          publish: yarn publish
+      - name: Publish packages with the new version (${GITHUB_REF_NAME})
+        run: yarn release ${GITHUB_REF_NAME}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

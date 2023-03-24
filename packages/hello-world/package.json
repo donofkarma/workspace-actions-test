@@ -5,12 +5,16 @@
   "main": "build/cjs/index.js",
   "module": "build/es/index.js",
   "types": "build/types/index.d.ts",
+  "files": [
+    "build/"
+  ],
   "sideEffects": false,
   "scripts": {
     "build:clean": "rm -rf .rollup.cache && rm -rf build/",
     "build:components": "NODE_ENV=production rollup --config rollup.config.ts --configPlugin typescript",
     "build:ts": "tsc",
-    "build": "yarn build:clean && yarn build:components && yarn build:ts"
+    "build": "yarn build:clean && yarn build:components && yarn build:ts",
+    "release": "yarn publish --no-git-tag-version --new-version"
   },
   "peerDependencies": {
     "@types/react": "18.0.28",
