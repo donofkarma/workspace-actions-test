@@ -1,0 +1,12 @@
+{
+  "name": "@donofkarma/workspace-actions-test",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build"
+  },
+  "dependencies": {}
+}
