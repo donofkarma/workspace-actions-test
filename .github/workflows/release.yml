@@ -24,6 +24,9 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@donofkarma"
 
+      - name: Set new package version
+        run: yarn version:packages ${GITHUB_REF_NAME}
+      
       - name: Install dependencies
         run: yarn
 

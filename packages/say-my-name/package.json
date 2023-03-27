@@ -14,7 +14,8 @@
     "build:components": "NODE_ENV=production rollup --config rollup.config.ts --configPlugin typescript",
     "build:ts": "tsc",
     "build": "yarn build:clean && yarn build:components && yarn build:ts",
-    "release": "yarn publish --no-git-tag-version --new-version"
+    "release": "yarn publish --no-git-tag-version --new-version",
+    "version:package": "yarn version --no-git-tag-version --new-version"
   },
   "peerDependencies": {
     "@types/react": "18.0.28",
@@ -27,7 +28,6 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "7.21.0"
   },
   "devDependencies": {
     "@babel/core": "7.21.3",
@@ -38,6 +38,7 @@
     "@rollup/plugin-commonjs": "24.0.1",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-typescript": "11.0.0",
+    "@babel/runtime": "7.21.0",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "react": "18.2.0",
