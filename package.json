@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/say-my-name",
+    "packages/hello"
   ],
   "scripts": {
     "build": "yarn workspaces run build",
